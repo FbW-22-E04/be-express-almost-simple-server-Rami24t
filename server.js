@@ -7,5 +7,16 @@ const server = app.listen(3001, () => {
 });
 
 // replace "/path" with your own path
-app.get('/path', (request, response) => {
+app.get('/hello', (request, response) => {
+    response.send("Hello World");
 });
+
+app.get('/time', (request, response) => {
+    // return a response with the current time and date in ISO format
+    response.send(new Date().toISOString());
+});
+
+app.get('/random', (request, response) => {
+    response.send(Math.random().toString());
+});
+
